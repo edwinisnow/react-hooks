@@ -17,6 +17,7 @@ import DataFetching from './components/DataFetching';
 import CounterOne from './components/CounterOne';
 import ComponentA from './components/ComponentA';
 import CounterTwo from './components/CounterTwo';
+import CounterThree from './components/CounterThree';
 
 export const UserContext = React.createContext();
 
@@ -26,7 +27,8 @@ function App() {
       {/* <UserContext.Provider value={'John'}>
         <ComponentA />
       </UserContext.Provider> */}
-      <CounterTwo />
+      <CounterThree />
+      {/* <CounterTwo /> */}
       {/* <CounterOne /> */}
       {/* <DataFetching /> */}
       {/* <IntervalHookCounter />
