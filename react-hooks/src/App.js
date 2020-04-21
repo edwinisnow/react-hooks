@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ClassCounter from './components/ClassCounter';
@@ -18,31 +18,36 @@ import CounterOne from './components/CounterOne';
 import ComponentA from './components/ComponentA';
 import CounterTwo from './components/CounterTwo';
 import CounterThree from './components/CounterThree';
+import ComponentA1 from './components/ComponentA1';
+import ComponentB1 from './components/ComponentB1';
+import ComponentC1 from './components/ComponentC1';
 
 export const UserContext = React.createContext();
+export const CountContext = React.createContext()
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action) {
+    case 'increment':
+      return state + 1;
+    case 'decrement':
+      return state - 1;
+    case 'reset':
+      return initialState;
+    default:
+      return state;
+  }
+}
 
 function App() {
+  const [count, dispatch] = useReducer(reducer, initialState)
   return (
     <div className="App">
-      {/* <UserContext.Provider value={'John'}>
-        <ComponentA />
-      </UserContext.Provider> */}
-      <CounterThree />
-      {/* <CounterTwo /> */}
-      {/* <CounterOne /> */}
-      {/* <DataFetching /> */}
-      {/* <IntervalHookCounter />
-      <IntervalClassCounter /> */}
-      {/* <MouseContainer /> */}
-      {/* <HookMouse /> */}
-      {/* <ClassMouse /> */}
-      {/* <HookCounterOne /> */}
-      {/* <ClassCounterOne /> */}
-      {/* <HookCounterFour /> */}
-      {/* <HookCounterThree /> */}
-      {/* <HookCounterTwo /> */}
-      {/* <HookCounter /> */}
-      {/* <ClassCounter /> */}
+      <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
+        Count - {count}
+        <ComponentA1 />
+        <ComponentB1 />
+        <ComponentC1 />
+      </CountContext.Provider>
     </div >
   );
 }
