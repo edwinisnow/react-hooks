@@ -21,6 +21,7 @@ import CounterThree from './components/CounterThree';
 import ComponentA1 from './components/ComponentA1';
 import ComponentB1 from './components/ComponentB1';
 import ComponentC1 from './components/ComponentC1';
+import ParentComponent from './components/ParentComponent';
 
 export const UserContext = React.createContext();
 export const CountContext = React.createContext()
@@ -39,15 +40,10 @@ const reducer = (state, action) => {
 }
 
 function App() {
-  const [count, dispatch] = useReducer(reducer, initialState)
+
   return (
     <div className="App">
-      <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
-        Count - {count}
-        <ComponentA1 />
-        <ComponentB1 />
-        <ComponentC1 />
-      </CountContext.Provider>
+      <ParentComponent />
     </div >
   );
 }
