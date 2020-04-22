@@ -23,6 +23,7 @@ import ComponentB1 from './components/ComponentB1';
 import ComponentC1 from './components/ComponentC1';
 import ParentComponent from './components/ParentComponent';
 import Counter from './components/Counter';
+import FocusInput from './components/FocusInput';
 
 export const UserContext = React.createContext();
 export const CountContext = React.createContext()
@@ -44,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <Counter />
+      <FocusInput />
     </div >
   );
 }
