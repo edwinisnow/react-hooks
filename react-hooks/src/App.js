@@ -30,6 +30,7 @@ import DocTitleOne from './components/DocTitleOne';
 import DocTitleTwo from './components/DocTitleTwo';
 import CounterFour from './components/CounterFour';
 import CounterFive from './components/CounterFive';
+import UserForm from './components/UserForm';
 
 export const UserContext = React.createContext();
 export const CountContext = React.createContext()
@@ -51,8 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <CounterFour />
-      <CounterFive />
+      <UserForm />
     </div >
   );
 }
