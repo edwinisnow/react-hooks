@@ -28,6 +28,8 @@ import ClassTimer from './components/ClassTimer';
 import HookTimer from './components/HookTimer';
 import DocTitleOne from './components/DocTitleOne';
 import DocTitleTwo from './components/DocTitleTwo';
+import CounterFour from './components/CounterFour';
+import CounterFive from './components/CounterFive';
 
 export const UserContext = React.createContext();
 export const CountContext = React.createContext()
@@ -49,8 +51,8 @@ function App() {
 
   return (
     <div className="App">
-      <DocTitleOne />
-      <DocTitleTwo />
+      <CounterFour />
+      <CounterFive />
     </div >
   );
 }
